@@ -1,5 +1,10 @@
+A fork of https://github.com/cncf/devstats-example
+
+This fork is used to configure Kubeflow.
+
 # Example DevStats deployment - Homebrew
 
+TODO(jlewi): These instructions probably aren't relevant
 This is installed [here](http://147.75.105.130:3001), it uses neither DNS nor SSL.
 
 It runs on Ubuntu 18.04 LTS on an ARM64 architecture.
