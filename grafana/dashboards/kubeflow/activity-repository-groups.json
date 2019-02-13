@@ -17,18 +17,21 @@
         "iconColor": "rgba(255, 96, 96, 1)",
         "limit": 100,
         "name": "Releases",
+        "query": "SELECT title, description from annotations WHERE $timeFilter order by time asc",
         "rawQuery": "select extract(epoch from time) AS time, title as text, description as tags from sannotations where $__timeFilter(time)",
         "showIn": 0,
-        "tags": [],
-        "type": "tags"
+        "tagsColumn": "title,description",
+        "textColumn": "",
+        "titleColumn": "[[full_name]] Release",
+        "type": "alert"
       }
     ]
   },
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
-  "iteration": 1534950737132,
+  "id": 31,
+  "iteration": 1529598229586,
   "links": [],
   "panels": [
     {
@@ -339,7 +342,7 @@
           "format": "short",
           "label": "GitHub activity",
           "logBase": 1,
-          "max": null,
+          "max": "100",
           "min": "0",
           "show": true
         },
@@ -356,6 +359,20 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "content": "[[docs]]",
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 63
+      },
+      "id": 1,
+      "links": [],
+      "mode": "html",
+      "title": "Dashboard documentation",
+      "type": "text"
     }
   ],
   "refresh": false,
@@ -363,16 +380,13 @@
   "style": "dark",
   "tags": [
     "dashboard",
-    "homebrew"
+    "knative"
   ],
   "templating": {
     "list": [
       {
         "allValue": null,
-        "current": {
-          "text": "Homebrew",
-          "value": "Homebrew"
-        },
+        "current": {},
         "datasource": "psql",
         "hide": 2,
         "includeAll": false,
@@ -383,7 +397,7 @@
         "query": "select value_s from gha_vars where name = 'full_name'",
         "refresh": 1,
         "regex": "",
-        "skipUrlSync": false,
+        "skipUrlSync": true,
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -451,10 +465,7 @@
       },
       {
         "allValue": "",
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "datasource": "psql",
         "hide": 0,
         "includeAll": true,
@@ -466,6 +477,27 @@
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
+        "datasource": "psql",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "docs",
+        "options": [],
+        "query": "select value_s from gha_vars where name = 'activity_docs_html'",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": true,
         "sort": 0,
         "tagValuesQuery": "",
         "tags": [],
@@ -507,5 +539,5 @@
   "timezone": "",
   "title": "Activity repository groups",
   "uid": "1",
-  "version": 3
+  "version": 2
 }

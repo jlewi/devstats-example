@@ -31,8 +31,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 4,
-  "iteration": 1535964120450,
+  "id": 8,
+  "iteration": 1539254495588,
   "links": [],
   "panels": [
     {
@@ -170,7 +170,7 @@
       "description": "https://github.com/cncf/devstats",
       "folderId": 0,
       "gridPos": {
-        "h": 7,
+        "h": 33,
         "w": 24,
         "x": 0,
         "y": 6
@@ -191,11 +191,25 @@
       "starred": false,
       "tags": [
         "dashboard",
-        "homebrew"
+        "knative"
       ],
       "title": "All [[full_name]] Dashboards",
       "transparent": false,
       "type": "dashlist"
+    },
+    {
+      "content": "[[docs]]",
+      "gridPos": {
+        "h": 9,
+        "w": 24,
+        "x": 0,
+        "y": 37
+      },
+      "id": 6,
+      "links": [],
+      "mode": "html",
+      "title": "Dashboard documentation",
+      "type": "text"
     }
   ],
   "refresh": "15m",
@@ -204,16 +218,34 @@
   "tags": [
     "home",
     "all",
-    "homebrew"
+    "knative"
   ],
   "templating": {
     "list": [
       {
         "allValue": null,
-        "current": {
-          "text": "Homebrew",
-          "value": "Homebrew"
-        },
+        "current": {},
+        "datasource": "psql",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "docs",
+        "options": [],
+        "query": "select value_s from gha_vars where name = 'dashboards_docs_html'",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": true,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {},
         "datasource": "psql",
         "hide": 2,
         "includeAll": false,
@@ -231,11 +263,35 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "teststats.cncf.io",
+          "value": "teststats.cncf.io"
+        },
+        "datasource": "psql",
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "hostname",
+        "options": [],
+        "query": "select value_s from gha_vars where name = 'os_hostname'",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": true,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
       }
     ]
   },
   "time": {
-    "from": "now-30d",
+    "from": "now-7d",
     "to": "now-1h"
   },
   "timepicker": {
@@ -267,5 +323,5 @@
   "timezone": "",
   "title": "Dashboards",
   "uid": "8",
-  "version": 6
+  "version": 2
 }
