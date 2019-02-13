@@ -7,7 +7,7 @@
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations \u0026 Alerts",
+        "name": "Annotations & Alerts",
         "type": "dashboard"
       },
       {
@@ -30,7 +30,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 30,
   "iteration": 1529598246392,
   "links": [],
   "panels": [
@@ -380,7 +379,7 @@
   "style": "dark",
   "tags": [
     "dashboard",
-    "knative"
+    "kubeflow"
   ],
   "templating": {
     "list": [

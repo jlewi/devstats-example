@@ -7,7 +7,7 @@
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations \u0026 Alerts",
+        "name": "Annotations & Alerts",
         "type": "dashboard"
       },
       {
@@ -30,7 +30,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 19,
   "iteration": 1543674759421,
   "links": [],
   "panels": [
@@ -172,7 +171,7 @@
       "yaxes": [
         {
           "format": "h",
-          "label": "Opened to merged (median \u0026 85th percentile)",
+          "label": "Opened to merged (median & 85th percentile)",
           "logBase": 10,
           "max": null,
           "min": "0",
@@ -382,7 +381,7 @@
   "style": "dark",
   "tags": [
     "dashboard",
-    "knative"
+    "kubeflow"
   ],
   "templating": {
     "list": [

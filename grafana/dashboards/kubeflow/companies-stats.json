@@ -8,7 +8,7 @@
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
         "limit": 100,
-        "name": "Annotations \u0026 Alerts",
+        "name": "Annotations & Alerts",
         "showIn": 0,
         "type": "dashboard"
       },
@@ -32,7 +32,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 4,
   "iteration": 1543674550153,
   "links": [],
   "panels": [
@@ -292,7 +291,7 @@
   "tags": [
     "companies",
     "dashboard",
-    "knative"
+    "kubeflow"
   ],
   "templating": {
     "list": [

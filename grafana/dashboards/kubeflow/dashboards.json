@@ -7,7 +7,7 @@
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations \u0026 Alerts",
+        "name": "Annotations & Alerts",
         "type": "dashboard"
       },
       {
@@ -31,7 +31,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 8,
   "iteration": 1539254495588,
   "links": [],
   "panels": [
@@ -150,7 +149,7 @@
       }
     },
     {
-      "content": "\u003chead\u003e\n\u003c/head\u003e\nPlease report any bugs by opening an issue on \u003ca href=\"https://github.com/cncf/devstats\"\u003ehttps://github.com/cncf/devstats\u003c/a\u003e",
+      "content": "<head>\n</head>\nPlease report any bugs by opening an issue on <a href=\"https://github.com/cncf/devstats\">https://github.com/cncf/devstats</a>",
       "description": "",
       "gridPos": {
         "h": 6,
@@ -191,7 +190,7 @@
       "starred": false,
       "tags": [
         "dashboard",
-        "knative"
+        "kubeflow"
       ],
       "title": "All [[full_name]] Dashboards",
       "transparent": false,
@@ -218,7 +217,7 @@
   "tags": [
     "home",
     "all",
-    "knative"
+    "kubeflow"
   ],
   "templating": {
     "list": [
