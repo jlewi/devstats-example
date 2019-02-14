@@ -28,12 +28,12 @@ then
   echo "dropping done"
 fi
 
-exists=`sudo -u postgres psql -tAc "select 1 from pg_database WHERE datname = 'devstats'"` || exit 4
+exists=`sudo -E -u postgres psql -tAc "select 1 from pg_database WHERE datname = 'devstats'"` || exit 4
 if ( [ ! -z "$LDROP" ] && [ "$exists" = "1" ] )
 then
   echo "dropping postgres database devstats (logs)"
-  sudo -u postgres psql -c "select pg_terminate_backend(pid) from pg_stat_activity where datname = 'devstats'" || exit 5
-  sudo -u postgres psql -c "drop database devstats" || exit 6
+  sudo -E -u postgres psql -c "select pg_terminate_backend(pid) from pg_stat_activity where datname = 'devstats'" || exit 5
+  sudo -E -u postgres psql -c "drop database devstats" || exit 6
 fi
 
 if [ ! -z "$NOCREATE" ]
@@ -42,17 +42,17 @@ then
   exit 0
 fi
 
-exists=`sudo -u postgres psql -tAc "select 1 from pg_database WHERE datname = 'devstats'"` || exit 7
+exists=`sudo -E -u postgres psql -tAc "select 1 from pg_database WHERE datname = 'devstats'"` || exit 7
 if [ ! "$exists" = "1" ]
 then
   echo "creating postgres database devstats (logs)"
-  sudo -u postgres psql -c "create database devstats" || exit 8
-  sudo -u postgres psql -c "create user gha_admin with password '$PG_PASS'" || exit 9
-  sudo -u postgres psql -c "create user ro_user with password '$PG_PASS_RO'" || exit 10
-  sudo -u postgres psql -c "create user devstats_team with password '$PG_PASS_TEAM'" || exit 11
-  sudo -u postgres psql -c "grant all privileges on database \"devstats\" to gha_admin" || exit 12
-  sudo -u postgres psql -c "alter user gha_admin createdb" || exit 13
-  sudo -u postgres psql devstats < ./util_sql/devstats_log_table.sql || exit 14
+  sudo -E -u postgres psql -c "create database devstats" || exit 8
+  sudo -E -u postgres psql -c "create user gha_admin with password '$PG_PASS'" || exit 9
+  sudo -E -u postgres psql -c "create user ro_user with password '$PG_PASS_RO'" || exit 10
+  sudo -E -u postgres psql -c "create user devstats_team with password '$PG_PASS_TEAM'" || exit 11
+  sudo -E -u postgres psql -c "grant all privileges on database \"devstats\" to gha_admin" || exit 12
+  sudo -E -u postgres psql -c "alter user gha_admin createdb" || exit 13
+  sudo -E -u postgres psql devstats < ./util_sql/devstats_log_table.sql || exit 14
   ./devel/ro_user_grants.sh devstats || exit 15
   ./devel/psql_user_grants.sh "devstats_team" "devstats" || exit 16
 else
