@@ -1,7 +1,7 @@
 #!/bin/bash
 # UDROP=1 attempt to drop users
 # LDROP=1 attempt to drop devstats database
-set -o pipefail
+set -x -o pipefail
 if ( [ -z "$PG_PASS" ] || [ -z "$PG_PASS_RO" ] || [ -z "$PG_PASS_TEAM" ] )
 then
   echo "$0: You need to set PG_PASS, PG_PASS_RO, PG_PASS_TEAM when using INIT"

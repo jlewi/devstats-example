@@ -4,7 +4,7 @@
 # PDROP=1 (will drop & create Postgres DB)
 # GET=1 (will use Postgres DB backup from $HOST_SRC)
 lim=70
-set -o pipefail
+set -x -o pipefail
 if [ -z "$PG_PASS" ]
 then
   echo "$0: You need to set PG_PASS environment variable to run this script"
